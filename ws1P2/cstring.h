@@ -1,10 +1,3 @@
-//==============================================
-// Name           : Kabir Narula
-// Email          : Knarula9@myseneca.ca
-// Student ID     : 127962223
-// Section        : NAA
-// Date           : 05/17/2023(Wednesday)
-//==============================================
 
 #ifndef SDDS_CSTRING_H
 #define SDDS_CSTRING_H
