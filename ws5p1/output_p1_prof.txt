@@ -1,0 +1,126 @@
+Script started on Fri 09 Jun 2023 10:27:12 PM EDT
+==43759== Memcheck, a memory error detector
+==43759== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==43759== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==43759== Command: ws
+==43759== 
+[38;5;9mBegin Testing the Program!
+--------------------------[0m
+
+T1: Checking constructors
+==========:==========:==========:==========:==========
+--------------------------------------
+| Name       |   Number |    Balance |
+--------------------------------------
+| John       | 00111111 |     111.11 |
+| Jane       | 00222222 |     222.22 |
+| xxxxxxxxxx | xxxxxxxx | xxxxxxxxxx |
+| Vanessa    |        0 |       0.00 |
+| xxxxxxxxxx | xxxxxxxx | xxxxxxxxxx |
+| Dan        | 00555555 |       0.00 |
+| Sarah      | 00666666 |     -66.67 |
+| Michael    | 00777777 |     777.78 |
+| xxxxxxxxxx | xxxxxxxx | xxxxxxxxxx |
+| Allie      |        0 |       0.00 |
+--------------------------------------
+
+T2: Testing conversion operators
+==========:==========:==========:==========:==========
+--------------------------------------
+|John|111111|111.111|
+|Jane|222222|222.222|
+|Dan|555555|0|
+|Sarah|666666|-66.666|
+|Michael|777777|777.777|
+--------------------------------------
+
+T3: Testing the assignment operator
+==========:==========:==========:==========:==========
+--------------------------------------
+| Name       |   Number |    Balance |
+--------------------------------------
+| xxxxxxxxxx | xxxxxxxx | xxxxxxxxxx |
+| xxxxxxxxxx | xxxxxxxx | xxxxxxxxxx |
+| xxxxxxxxxx | xxxxxxxx | xxxxxxxxxx |
+| Tom        |        0 |       0.00 |
+| Tom        |        0 |       0.00 |
+| Tom        |        0 |       0.00 |
+| Tom        |        0 |       0.00 |
+| Tom        | 00123456 |       0.00 |
+| Tom        | 00123456 |     987.65 |
+--------------------------------------
+
+T4: Testing the increment operator
+==========:==========:==========:==========:==========
+--------------------------------------
+| Name       |   Number |    Balance |
+--------------------------------------
+| Cornel     | 00123456 |    -500.00 |
+| Cornel     | 00123456 |     500.00 |
+| Cornel     | 00123456 |     500.00 |
+| Cornel     | 00123456 |     500.00 |
+| Cornel     | 00123456 |    1500.00 |
+--------------------------------------
+
+T5: Testing addition operator
+==========:==========:==========:==========:==========
+--------------------------------------
+Should be  0 -> 0
+Should be  0 -> 0
+Should be OK -> -66.666
+Should be OK -> 711.111
+Should be  0 -> 0
+Should be  0 -> 0
+Should be OK -> 877.777
+Should be OK -> 877.777
+Should be OK -> 533.333
+--------------------------------------
+
+T6: Testing addition-assignment operator
+==========:==========:==========:==========:==========
+--------------------------------------
+| Sarah      | 00666666 |     -16.67 |
+| Sarah      | 00666666 |     -16.67 |
+| Sarah      | 00666666 |     -16.67 |
+Val = [983.334]
+--------------------------------------
+
+T7: Testing comparison operator
+==========:==========:==========:==========:==========
+--------------------------------------
+Checking same name: false
+Checking same name: true
+Checking same number: false
+Checking same number: true
+--------------------------------------
+
+T8: Testing insertion/extraction operators
+==========:==========:==========:==========:==========
+--------------------------------------
+| Name       |   Number |    Balance |
+--------------------------------------
+| Cornel     | 00123456 |     500.00 |
+| Vanessa    | 00654321 |    5000.00 |
+| Cornel     | 00123456 |     500.00 |
+| Vanessa    | 00654321 |    5000.00 |
+| Cornel     | 00123456 |     500.00 |
+| Vanessa    | 00654321 |    5000.00 |
+| Cornel     | 00123456 |    5500.00 |
+| Vanessa    | 00654321 |       0.00 |
+| Cornel     | 00123456 |       0.00 |
+| Vanessa    | 00654321 |    5500.00 |
+--------------------------------------
+
+[38;5;9m------------------------
+End Testing the Program![0m
+==43759== 
+==43759== HEAP SUMMARY:
+==43759==     in use at exit: 0 bytes in 0 blocks
+==43759==   total heap usage: 1 allocs, 1 frees, 72,704 bytes allocated
+==43759== 
+==43759== All heap blocks were freed -- no leaks are possible
+==43759== 
+==43759== For lists of detected and suppressed errors, rerun with: -s
+==43759== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Fri 09 Jun 2023 10:27:12 PM EDT
