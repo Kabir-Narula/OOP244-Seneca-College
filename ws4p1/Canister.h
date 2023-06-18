@@ -1,10 +1,4 @@
-//==============================================
-// Name           : Kabir Narula
-// Email          : Knarula9@myseneca.ca
-// Student ID     : 127962223
-// Section        : NAA
-// Date           : 06/06/2023(Thursday)
-//==============================================
+
 
 #ifndef SDDS_CANISTER_H
 #define SDDS_CANISTER_H
@@ -71,7 +65,7 @@ namespace sdds
 		* getCapacity()
 		*
 		* - calculate the capacity of the container using the formula:
-		*   capacity = PI × (height - 0.267) × (diameter/2)^2
+		*   capacity = PI Ã— (height - 0.267) Ã— (diameter/2)^2
 		*
 		* The canister must have `0.267cm` of the height that must remain empty.
 		*
