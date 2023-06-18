@@ -1,0 +1,5 @@
+﻿  Canister.cpp
+C:\Users\kabir\OneDrive\Desktop\workshop4part1\Canister.cpp(189,25): warning C4244: 'initializing': conversion from 'std::streamsize' to 'int', possible loss of data
+  canisterTester.cpp
+  Generating Code...
+  workshop4part1.vcxproj -> C:\Users\kabir\OneDrive\Desktop\workshop4part1\x64\Debug\workshop4part1.exe

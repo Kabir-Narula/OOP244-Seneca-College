@@ -1,0 +1,24 @@
+//==============================================
+// Name           : Kabir Narula
+// Email          : Knarula9@myseneca.ca
+// Student ID     : 127962223
+// Section        : NAA
+// Date           : 13/06/2023(tuesday)
+//==============================================
+//I did all the code by myself and only copied the code given by professor 
+//provided to complete my workshops and assignments.
+
+There are several things i learnt from this workshop-
+Dynamic memory allocation: Using the new operator, I gained expertise with dynamic memory allocation. 
+The labels are stored in an array of Label objects that the LabelMaker class dynamically constructs.
+I became aware of the significance of effectively controlling dynamically allocated memory to avoid memory leaks.
+
+I discovered how to define constructors, which initialise objects and deal with various argument lists.
+The Label array's memory is dynamically allocated in the LabelMaker class' constructor. 
+In order to deallocate the memory when the LabelMaker object exits the scope, I additionally implemented a destructor.
+Labels may be read from the user and printed to the console using member functions I added to the LabelMaker class.
+I iterated through the Label array using a for loop.
+
+Throughout the workshop, I faced some challenges, such as managing dynamic memory and understanding the proper allocation and deallocation of resources.
+However, by carefully studying the provided code and consulting the course notes,
+I was able to overcome these difficulties and successfully implement the required functionality.
