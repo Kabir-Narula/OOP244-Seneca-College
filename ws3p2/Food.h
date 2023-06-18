@@ -1,12 +1,4 @@
-//==============================================
-// Name           : Kabir Narula
-// Email          : Knarula9@myseneca.ca
-// Student ID     : 127962223
-// Section        : NAA
-// Date           : 06/06/2023(tuesday)
-//==============================================
-//I did all the code by myself and only copied the code given by professor 
-//provided to complete my workshops and assignments.
+
 #define _CRT_SECURE_NO_WARNINGS
 #ifndef SDDS_FOOD_H
 #define SDDS_FOOD_H
