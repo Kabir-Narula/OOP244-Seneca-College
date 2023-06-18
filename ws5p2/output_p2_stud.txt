@@ -1,0 +1,75 @@
+Script started on Thu 15 Jun 2023 08:29:29 PM EDT
+==167784== Memcheck, a memory error detector
+==167784== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==167784== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==167784== Command: ws
+==167784== 
+[38;5;9mBegin Testing the Program!
+--------------------------[0m
+
+T1: Testing conversion-to-int operator
+==========:==========:==========:==========:==========
+0
+25
+0
+0
+
+T2: Testing addition-assignment operator
+==========:==========:==========:==========:==========
+20
+45
+0
+0
+
+T3: Testing the assignment operator
+==========:==========:==========:==========:==========
+80
+0
+70
+
+T4: Testing conversion-to-double operator
+==========:==========:==========:==========:==========
+1
+4
+0
+
+T5: Testing conversion-to-char operator
+==========:==========:==========:==========:==========
+D
+A
+X
+
+T6: Testing addition-assignment operator
+==========:==========:==========:==========:==========
+140
+140
+
+T7: Testing all values
+==========:==========:==========:==========:==========
+46: F, 0
+51: D, 1
+56: D, 1
+61: C, 2
+66: C, 2
+71: B, 3
+76: B, 3
+81: A, 4
+86: A, 4
+91: A, 4
+96: A, 4
+0: X, 0
+Average: 65 GPA: 2
+
+[38;5;9m------------------------
+End Testing the Program![0m
+==167784== 
+==167784== HEAP SUMMARY:
+==167784==     in use at exit: 0 bytes in 0 blocks
+==167784==   total heap usage: 1 allocs, 1 frees, 72,704 bytes allocated
+==167784== 
+==167784== All heap blocks were freed -- no leaks are possible
+==167784== 
+==167784== For lists of detected and suppressed errors, rerun with: -s
+==167784== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Thu 15 Jun 2023 08:29:30 PM EDT
