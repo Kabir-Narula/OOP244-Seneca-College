@@ -1,0 +1,79 @@
+Script started on Thu 08 Jun 2023 02:35:48 PM EDT
+==101460== Memcheck, a memory error detector
+==101460== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==101460== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==101460== Command: ws
+==101460== 
+[38;5;9mBegin Testing the Program!
+--------------------------[0m
+
+T1: Default output formatting options
+==========:==========:==========:==========:==========
+*0000000000000000000000000000000000000000000000000ABC*
+*0000000000000000000000000000000000000000000001.23457*
+*0000000000000000000000000000000000000000000000000123*
+
+T2: Checking constructors
+==========:==========:==========:==========:==========
+  #   Capacity  Dimensions               Volume     Content
+----  ---------------------------------  ---------  ---------------------------
+001.   1000.0cc (13.0x10.0) canister of      0.0cc
+002.   1000.0cc (13.0x10.0) canister of      0.0cc
+003.   1000.0cc (13.0x10.0) canister of      0.0cc
+004.   1000.0cc (13.0x10.0) canister of      0.0cc
+005.   1000.0cc (13.0x10.0) canister of      0.0cc
+006.  28085.6cc (40.0x30.0) canister of      0.0cc
+007.   1000.0cc (13.0x10.0) canister of      0.0cc
+008.   1000.0cc (13.0x10.0) canister of      0.0cc
+009.   1000.0cc (13.0x10.0) canister of    123.5cc  Orange Juice
+010.   1000.0cc (13.0x10.0) canister of    321.5cc  Olive Oil
+011.   1000.0cc (13.0x10.0) canister of    321.5cc  Water
+012.   6199.3cc (20.0x20.0) canister of      0.0cc
+013.   6199.3cc (20.0x20.0) canister of      0.0cc
+014.   6199.3cc (20.0x20.0) canister of    321.5cc  Olive Oil
+015.   3487.1cc (20.0x15.0) canister of   3487.1cc  Milk
+016.    764.4cc (10.0x10.0) canister of    456.3cc  Gasoline
+017.   1000.0cc (13.0x10.0) canister of    578.5cc  Orange Juice
+018.   1000.0cc (13.0x10.0) canister of    578.5cc  Olive Oil
+019.   6199.3cc (20.0x20.0) canister of    321.5cc  Olive Oil
+020.   6199.3cc (20.0x20.0) canister of    321.5cc  Olive Oil
+-------------------------------------------------------------------------------
+
+T3: Checking Canister::pour
+==========:==========:==========:==========:==========
+  1000.0cc (13.0x10.0) canister of    700.0cc  Spagetti Sauce
+  1000.0cc (13.0x10.0) canister of    900.0cc  Spagetti Sauce
+  1000.0cc (13.0x10.0) canister of    100.0cc  Yogurt with strawberry flavor
+  1000.0cc (13.0x10.0) canister of   1000.0cc  Mix of [Spagetti Sauce] and [Yogurt with strawberry flavor] -> unusable content. Discard and wash!
+  1000.0cc (13.0x10.0) canister of      0.0cc
+  1000.0cc (13.0x10.0) canister of   1000.0cc  Mix of [Spagetti Sauce] and [Yogurt with strawberry flavor] -> unusable content. Discard and wash!
+  1000.0cc (13.0x10.0) canister of      0.0cc
+  1000.0cc (13.0x10.0) canister of      0.0cc
+  1000.0cc (13.0x10.0) canister of    876.0cc  Apple Cider
+  1000.0cc (13.0x10.0) canister of      0.0cc
+  1000.0cc (13.0x10.0) canister of    876.0cc  Apple Cider
+ 28085.6cc (40.0x30.0) canister of  28085.6cc  Apple Cider
+  1000.0cc (13.0x10.0) canister of   1000.0cc  Apple Cider
+ 28085.6cc (40.0x30.0) canister of  27961.6cc  Apple Cider
+ 28085.6cc (40.0x30.0) canister of  28085.6cc  Mix of [Apple Cider] and [Olive Oil] -> unusable content. Discard and wash!
+  6199.3cc (20.0x20.0) canister of    197.4cc  Olive Oil
+
+T4: Current output formatting options
+==========:==========:==========:==========:==========
+*0000000000000000000000000000000000000000000000000ABC*
+*0000000000000000000000000000000000000000000001.23457*
+*0000000000000000000000000000000000000000000000000123*
+
+[38;5;9m------------------------
+End Testing the Program![0m
+==101460== 
+==101460== HEAP SUMMARY:
+==101460==     in use at exit: 0 bytes in 0 blocks
+==101460==   total heap usage: 18 allocs, 18 frees, 72,982 bytes allocated
+==101460== 
+==101460== All heap blocks were freed -- no leaks are possible
+==101460== 
+==101460== For lists of detected and suppressed errors, rerun with: -s
+==101460== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Thu 08 Jun 2023 02:35:49 PM EDT

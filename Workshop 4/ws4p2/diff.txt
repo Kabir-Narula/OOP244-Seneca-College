@@ -1,0 +1,14 @@
+In line number 32 of your output:
+The output should be:
+Enter label number 2 > Computer Principles for Programmers
+                       ^
+But your output is: 
+Enter label number 2 >  Computer Principles for Programmers
+                       ^
+
+Unmatched character details:
+The character in column 24 is supposed to be:
+  [C] ASCII code(67)
+but you printed
+  [Space] ASCII code(32)
+
