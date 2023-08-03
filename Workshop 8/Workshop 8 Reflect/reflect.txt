@@ -1,0 +1,27 @@
+ //==============================================
+// Name           : Kabir Narula
+// Email          : Knarula9@myseneca.ca
+// Student ID     : 127962223
+// Section        : NAA
+// Date           : 25/07/2023(Tuesday)
+//==============================================
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+ 
+ I learned a lot about inheritance and virtual functions in C++ during this workshop,and I have a solid understanding of how they contribute to flexible and dynamic class hierarchies.
+Four classes were used in the workshop: Shape, LblShape, Line, and Rectangle. Each class built on the others to explain a different topic. 
+    
+    Draw and getSpecs were two entirely virtual functions that were part of the Shape class, which served as an interface.  I discovered that pure virtual functions are indicated in the class declaration with "= 0;" and have no implementation.
+While the getSpecs function reads data from an istream to set the object's properties, the draw function outputs a representation of the
+shape using an ostream reference. When deleting derived objects using a base class pointer,
+the Shape interface must implement an empty virtual destructor in order to maintain correct memory management.
+     
+    Moving on, the LblShape class added a label to a shape and was an abstract class that descended from Shape. 
+The unchangeable m_label member variable was accessible through the label() query. Memory allocation and deallocation for the label were handled by the constructors and destructor, respectively. I prevented any unauthorised copying by removing the copy constructor and assignment operator.
+The Line class, which extended LblShape to produce a labelled horizontal line, was the next thing I implemented.
+Last but not least, a labelled rectangular frame was created by the Rectangle class, which also borrowed from LblShape. The draw function produced the expected results, and the constructors made sure that the width and height were suitable for drawing a rectangle.
+
+    After finishing this workshop, I realised how important virtual functions are for enabling polymorphism, runtime binding, and dynamic behaviour.
+Additionally, I learnt how to build strong class hierarchies using abstract classes and inheritance, as well as how to manage memory whenworkingwith dynamically allocated resources.
+        
+Difficulties-Memory Management for LblShape: I had some difficulty with memory management for the label in the LblShape class. Careful consideration was needed to ensure proper memory allocation, copying, and deallocation.
+But with some debugging, I was able to manage it well.
