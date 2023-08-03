@@ -1,6 +1,0 @@
-﻿  Label.cpp
-C:\Users\kabir\OneDrive\Desktop\Workshop2part2\Label.cpp(79,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  LabelMaker.cpp
-  LabelTester.cpp
-  Generating Code...
-  Workshop2part2.vcxproj -> C:\Users\kabir\OneDrive\Desktop\Workshop2part2\x64\Debug\Workshop2part2.exe
