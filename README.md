@@ -14,6 +14,14 @@ Hey there! Welcome to my C++ Workshop Assignments repository! As a college stude
  Workshop 09: 10/10                                                                                                                                                   
  Worskhop 10: 10/10
 
+Project:
+
+Milestone 01: 10/10
+Milestone 02: 10/10
+Milestone 03: 10/10
+Milestone 04: 10/10
+Milestone 05: Pending...
+
 # Need Help?
 If you encounter any issues or have questions related to the assignments or C++ programming in general, feel free to reach out to me. I'm more than willing to help you out! You can contact me through the following means:
 
