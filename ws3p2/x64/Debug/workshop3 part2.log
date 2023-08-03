@@ -1,6 +1,0 @@
-﻿  CalorieList.cpp
-C:\Users\kabir\OneDrive\Desktop\workshop3 part2\CalorieList.cpp(71,23): warning C4244: 'initializing': conversion from 'std::streamsize' to 'int', possible loss of data
-  calorieListTester.cpp
-  Food.cpp
-  Generating Code...
-  workshop3 part2.vcxproj -> C:\Users\kabir\OneDrive\Desktop\workshop3 part2\x64\Debug\workshop3 part2.exe
