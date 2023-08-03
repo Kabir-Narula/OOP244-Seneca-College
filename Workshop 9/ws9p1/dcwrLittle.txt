@@ -1,0 +1,46 @@
+Design classes with dynamically allocated resources to model the components of a programming solution
+Define the copy constructor and assignment operator for a derived class with a resource
+Identify the copy constructor and copy assignment operator defaults for a derived class
+"If you use pointers, you have to think about resource management" (Stroustrup, 1997)
+
+Inheritance hierarchies that access resources at multiple levels require intervention.  Managing relationships between the special member functions in a hierarchy with multiple resources involves ensuring that the appropriate calls between these functions are made.  The definitions of some copy constructors and copy assignment operators in the hierarchy may require explicit coding of the connections to their base class counterparts. 
+
+This chapter describes how to define the constructors and the copy assignment operators in a hierarchy that access multiple resources and how to call their base class counterparts. 
+
+
+CONSTRUCTORS AND DESTRUCTOR
+
+Each constructor of a derived class calls a constructor of its base class.  By default, that constructor is the no-argument constructor.  To override this default, we insert an explicit call to the base class constructor. 
+
+Destructors in an inheritance hierarchy do not require any intervention, since each class in the hierarchy has but one destructor and each destructor calls its sole base class counterpart automatically. 
+
+Example
+
+Let us upgrade the definition of our Student class to accommodate a client-defined number of grades.  We store the grades in dynamic memory and store the address of that memory in a resource instance pointer. 
+
+The upgraded definition of our Student class contains a resource instance pointer:
+
+ // Student.h
+
+ #include <iostream>
+ const int NC = 30;
+
+ class Person {
+     char name[NC+1];
+   public:
+     Person();
+     Person(const char*);
+     void display(std::ostream&) const; 
+ };
+
+ class Student : public Person {
+     int no;
+     float* grade;
+     int ng;
+   public:
+     Student();
+     Student(int);
+     Student(const char*, int, const float*, int); 
+     ~Student();
+     void display(std::ostream&) const;
+ };

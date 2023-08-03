@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Derived Classes and Resources</title>
+</head>
+<body>
+    <h1>Derived Classes and Resources</h1>
+    Design classes with dynamically allocated resources to model the components of a programming solution<br />
+    Define the copy constructor and assignment operator for a derived class with a resource<br />
+    Identify the copy constructor and copy assignment operator defaults for a derived class<br />
+    "If you use pointers, you have to think about resource management" (Stroustrup, 1997)<br />
+    <br />
+    Inheritance hierarchies that access resources at multiple levels require intervention. &nbsp;Managing relationships between the special member functions in a hierarchy with multiple resources involves ensuring that the appropriate calls between these functions are made. &nbsp;The definitions of some copy constructors and copy assignment operators in the hierarchy may require explicit coding of the connections to their base class counterparts. <br />
+    <br />
+    This chapter describes how to define the constructors and the copy assignment operators in a hierarchy that access multiple resources and how to call their base class counterparts. <br />
+    <br />
+    <br />
+    CONSTRUCTORS AND DESTRUCTOR<br />
+    <br />
+    Each constructor of a derived class calls a constructor of its base class. &nbsp;By default, that constructor is the no-argument constructor. &nbsp;To override this default, we insert an explicit call to the base class constructor. <br />
+    <br />
+    Destructors in an inheritance hierarchy do not require any intervention, since each class in the hierarchy has but one destructor and each destructor calls its sole base class counterpart automatically. <br />
+    <br />
+    Example<br />
+    <br />
+    Let us upgrade the definition of our Student class to accommodate a client-defined number of grades. &nbsp;We store the grades in dynamic memory and store the address of that memory in a resource instance pointer. <br />
+    <br />
+    The upgraded definition of our Student class contains a resource instance pointer:<br />
+    <br />
+    // Student.h<br />
+    <br />
+    #include &lt;iostream&gt;<br />
+    const int NC = 30;<br />
+    <br />
+    class Person {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;char name[NC+1];<br />
+    &nbsp;&nbsp;public:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Person();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Person(const char*);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;void display(std::ostream&) const; <br />
+    };<br />
+    <br />
+    class Student : public Person {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;int no;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float* grade;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;int ng;<br />
+    &nbsp;&nbsp;public:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(int);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(const char*, int, const float*, int); <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;~Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;void display(std::ostream&) const;<br />
+    };
+</body>
+
+</html>

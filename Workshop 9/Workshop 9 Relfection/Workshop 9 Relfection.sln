@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Workshop 9 Relfection", "Workshop 9 Relfection.vcxproj", "{3830CA46-3E34-4391-85E7-725811494BB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3830CA46-3E34-4391-85E7-725811494BB5}.Debug|x64.ActiveCfg = Debug|x64
+		{3830CA46-3E34-4391-85E7-725811494BB5}.Debug|x64.Build.0 = Debug|x64
+		{3830CA46-3E34-4391-85E7-725811494BB5}.Debug|x86.ActiveCfg = Debug|Win32
+		{3830CA46-3E34-4391-85E7-725811494BB5}.Debug|x86.Build.0 = Debug|Win32
+		{3830CA46-3E34-4391-85E7-725811494BB5}.Release|x64.ActiveCfg = Release|x64
+		{3830CA46-3E34-4391-85E7-725811494BB5}.Release|x64.Build.0 = Release|x64
+		{3830CA46-3E34-4391-85E7-725811494BB5}.Release|x86.ActiveCfg = Release|Win32
+		{3830CA46-3E34-4391-85E7-725811494BB5}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAB2D1AF-D3FE-457D-9FDE-8ACC3C2CB0D1}
+	EndGlobalSection
+EndGlobal

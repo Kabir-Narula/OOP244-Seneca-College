@@ -1,0 +1,21 @@
+//==============================================
+// Name           : Kabir Narula
+// Email          : Knarula9@myseneca.ca
+// Student ID     : 127962223
+// Section        : NAA
+// Date           : 1/08/2023(Thursday)
+//==============================================
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+I learned how to create C++ classes to manage text files and transform them into basic HTML format in Workshop 9. 
+I was able to read file contents into dynamically allocated memory using the Text class, and I used the Rule of Three to effectively manage memory during copying and assignment. 
+
+The workshop's main objective was to create two classes, Text and HtmlText, each with its own set of functions. 
+Through the Text class, I learned how to read the contents of a text file into dynamically allocated memory and access the content using the index operator[] 
+In addition, I efficiently handled memory allocation and manipulation by using C-style string functions.
+
+The write() function in HtmlText demonstrated how to convert text content into a simple HTML format, replacing specific characters with corresponding HTML entities. 
+This exercise showcased the power of virtual functions, allowing dynamic binding and ensuring the appropriate write() function was called for each object.
+
+One of the challenges I faced was understanding how to convert characters to their corresponding HTML entities in the HtmlText class. 
+However, by following the provided logic and guidelines, I managed to implement the conversion successfully.

@@ -1,0 +1,557 @@
+<html>
+<head>
+    <title>Derived Classes and Resources</title>
+</head>
+<body>
+    <h1>Derived Classes and Resources</h1>
+    Design classes with dynamically allocated resources to model the components of a programming solution<br />
+    Define the copy constructor and assignment operator for a derived class with a resource<br />
+    Identify the copy constructor and copy assignment operator defaults for a derived class<br />
+    "If you use pointers, you have to think about resource management" (Stroustrup, 1997)<br />
+    <br />
+    <br />
+    Inheritance hierarchies that access resources at multiple levels require intervention. &nbsp;Managing relationships between the special member functions in a hierarchy with multiple resources involves ensuring that the appropriate calls between these functions are made. &nbsp;The definitions of some copy constructors and copy assignment operators in the hierarchy may require explicit coding of the connections to their base class counterparts. <br />
+    <br />
+    This chapter describes how to define the constructors and the copy assignment operators in a hierarchy that access multiple resources and how to call their base class counterparts. <br />
+    <br />
+    <br />
+    CONSTRUCTORS AND DESTRUCTOR<br />
+    <br />
+    Each constructor of a derived class calls a constructor of its base class. &nbsp;By default, that constructor is the no-argument constructor. &nbsp;To override this default, we insert an explicit call to the base class constructor. <br />
+    <br />
+    Destructors in an inheritance hierarchy do not require any intervention, since each class in the hierarchy has but one destructor and each destructor calls its sole base class counterpart automatically. <br />
+    <br />
+    Example<br />
+    <br />
+    Let us upgrade the definition of our Student class to accommodate a client-defined number of grades. &nbsp;We store the grades in dynamic memory and store the address of that memory in a resource instance pointer. <br />
+    <br />
+    The upgraded definition of our Student class contains a resource instance pointer:<br />
+    <br />
+    // Student.h<br />
+    <br />
+    #include &lt;iostream&gt;<br />
+    const int NC = 30;<br />
+    <br />
+    class Person {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;char name[NC+1];<br />
+    &nbsp;&nbsp;public:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Person();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Person(const char*);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;void display(std::ostream&) const; <br />
+    };<br />
+    <br />
+    class Student : public Person {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;int no;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float* grade;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;int ng;<br />
+    &nbsp;&nbsp;public:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(int);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(const char*, int, const float*, int); <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;~Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;void display(std::ostream&) const;<br />
+    };<br />
+    Our four-argument constructor forwards the student's name to the single-argument constructor of the base class and then allocates memory for the grades. &nbsp;Our destructor deallocates that memory. <br />
+    <br />
+    // Student.cpp<br />
+    <br />
+    #include &lt;cstring&gt;<br />
+    #include "Student.h"<br />
+    using namespace std;<br />
+    <br />
+    Person::Person() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;name[0] = '\0';<br />
+    }<br />
+    <br />
+    Person::Person(const char* nm) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;strncpy(name, nm, NC);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;name[NC] = '\0';<br />
+    }<br />
+    <br />
+    void Person::display(ostream& os) const {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; name &lt;&lt; ' ';<br />
+    }<br />
+    <br />
+    Student::Student() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;no = 0;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;ng = 0;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    }<br />
+    <br />
+    Student::Student(int n) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float g[] = {0.0f};<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;*this = Student("", n, g, 0);<br />
+    }<br />
+    <br />
+    Student::Student(const char* nm, int sn, const float* g, int ng_) : Person(nm) { <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;bool valid = sn &gt; 0 && g != nullptr && ng_ &gt;= 0; <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (valid)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng_ && valid; i++)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid = g[i] &gt;= 0.0f && g[i] &lt;= 100.0f;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (valid) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// accept the client's data<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no = sn;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ng = ng_;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ng &gt; 0) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = new float[ng_];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng; i++)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade[i] = g[i];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*this = Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    }<br />
+    <br />
+    Student::~Student() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;delete [] grade;<br />
+    }<br />
+    <br />
+    void Student::display(ostream& os) const {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (no &gt; 0) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Person::display(os);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; no &lt;&lt; ":\n";<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.setf(ios::fixed);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.precision(2);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng; i++) { <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.width(6);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; grade[i] &lt;&lt; endl;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.unsetf(ios::fixed);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.precision(6);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; "no data available" &lt;&lt; endl; <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    }<br />
+    The following client uses this implementation to produce the output shown on the right:<br />
+    <br />
+    // Derived Class with a Resource Constructors<br />
+    // dclassResourceCtor.cpp<br />
+    <br />
+    #include &lt;iostream&gt;<br />
+    #include "Student.h"<br />
+    <br />
+    int main() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Person jane("Jane");<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float gh[] = {89.4f, 67.8f, 45.5f};<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student harry("Harry", 1234, gh, 3);<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;harry.display(std::cout);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;jane.display(std::cout);<br />
+    }<br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    Harry 1234:<br />
+    &nbsp;89.40<br />
+    &nbsp;67.80<br />
+    &nbsp;45.50<br />
+    Jane<br />
+    <br />
+    COPY CONSTRUCTOR<br />
+    <br />
+    The copy constructor of a derived class calls a constructor of the base class. &nbsp;By default, that constructor is the no-argument constructor. &nbsp;To override this default, we explicitly call the base class constructor of our choice. <br />
+    <br />
+    The header in the definition of the copy constructor for a derived class takes the form<br />
+    <br />
+    Derived(const Derived& identifier) : Base(identifier) {<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// ...<br />
+    }<br />
+    The parameter receives an unmodifiable reference to an object of the derived class. &nbsp;The argument in the call to the base class' constructor is the parameter's identifier. <br />
+    <br />
+    Copying occurs in two distinct stages and four steps altogether:<br />
+    <br />
+    copy the base class part of the existing object<br />
+    allocate memory for the instance variables of the base class in the order of their declaration<br />
+    execute the base class' copy constructor<br />
+    copy the derived class part of the existing object<br />
+    allocate memory for the instance variables of the derived class in the order of their declaration<br />
+    execute the derived class' copy constructor<br />
+    Example<br />
+    <br />
+    Let us declare our own definition of the copy constructor for our Student class, but use the default definition for the Person class:<br />
+    <br />
+    // Student.h<br />
+    <br />
+    #include &lt;iostream&gt;<br />
+    const int NC = 30;<br />
+    <br />
+    class Person {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;char name[NC+1];<br />
+    &nbsp;&nbsp;public:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Person();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Person(const char*);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;void display(std::ostream&) const; <br />
+    };<br />
+    <br />
+    class Student : public Person {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;int no;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float* grade;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;int ng;<br />
+    &nbsp;&nbsp;public:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(int);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(const char*, int, const float*, int); <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(const Student&);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;~Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;void display(std::ostream&) const;<br />
+    };<br />
+    We implement the copying steps as follows:<br />
+    <br />
+    shallow copy the Person part of the source object<br />
+    allocate static memory for name in the base class part of the newly created object<br />
+    copy into name the string at address src.name<br />
+    copy the Student part of the source object<br />
+    allocate static memory for no, *grade and ng in the derived part of the newly created object<br />
+    shallow copy src.no into no<br />
+    shallow copy src.ng into ng<br />
+    allocate dynamic memory for a copy of src.grade<br />
+    deep copy the elements at src.grade into grade<br />
+    The default copy constructor for the base class performs a shallow copy. &nbsp;The copy constructor for the derived class calls the base class copy constructor and performs the deep copy itself:<br />
+    <br />
+    // Student.cpp<br />
+    <br />
+    #include &lt;cstring&gt;<br />
+    #include "Student.h"<br />
+    using namespace std;<br />
+    <br />
+    Person::Person() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;name[0] = '\0';<br />
+    }<br />
+    <br />
+    Person::Person(const char* nm) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;strncpy(name, nm, NC);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;name[NC] = '\0';<br />
+    }<br />
+    <br />
+    void Person::display(ostream& os) const {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; name &lt;&lt; ' ';<br />
+    }<br />
+    <br />
+    Student::Student() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;no = 0;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;ng = 0;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    }<br />
+    <br />
+    Student::Student(int n) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float g[] = {0.0f};<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;*this = Student("", n, g, 0);<br />
+    }<br />
+    <br />
+    Student::Student(const char* nm, int sn, const float* g, int ng_) : Person(nm) { <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;bool valid = sn &gt; 0 && g != nullptr && ng_ &gt;= 0; <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (valid)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng_ && valid; i++)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid = g[i] &gt;= 0.0f && g[i] &lt;= 100.0f;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (valid) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// accept the client's data<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no = sn;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ng = ng_;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ng &gt; 0) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = new float[ng_];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng; i++)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade[i] = g[i];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*this = Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    }<br />
+    <br />
+    Student::Student(const Student& src) : Person(src) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;no = src.no;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;ng = src.ng;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (src.grade != nullptr && ng &gt; 0) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = new float[ng];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng; i++)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade[i] = src.grade[i];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;else<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    }<br />
+    <br />
+    Student::~Student() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;delete [] grade;<br />
+    }<br />
+    <br />
+    void Student::display(ostream& os) const {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (no &gt; 0) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Person::display(os);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; no &lt;&lt; ":\n";<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.setf(ios::fixed);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.precision(2);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng; i++) { <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.width(6);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; grade[i] &lt;&lt; endl;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.unsetf(ios::fixed);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.precision(6);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; "no data available" &lt;&lt; endl; <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    }<br />
+    The Student copy constructor executes its logic after the Person copy constructor has executed its logic. <br />
+    <br />
+    The following client uses this implementation to produce the output shown on the right:<br />
+    <br />
+    // Derived Class with a Resource Copy Constructor<br />
+    // dclassResourceCopyCtor.cpp<br />
+    <br />
+    #include &lt;iostream&gt;<br />
+    #include "Student.h"<br />
+    <br />
+    int main() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float gh[] = {89.4f, 67.8f, 45.5f};<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student harry("Harry", 1234, gh, 3);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student harrz = harry; // calls copy constructor <br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;harry.display(std::cout);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;harrz.display(std::cout);<br />
+    }<br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    Harry 1234:<br />
+    &nbsp;89.40<br />
+    &nbsp;67.80<br />
+    &nbsp;45.50<br />
+    Harry 1234:<br />
+    &nbsp;89.40<br />
+    &nbsp;67.80<br />
+    &nbsp;45.50<br />
+    <br />
+    COPY ASSIGNMENT OPERATOR<br />
+    <br />
+    The default copy assignment operator of a derived class calls the copy assignment operator of its base class. &nbsp;However, any custom copy assignment operator of a derived class DOES NOT by default call the copy assignment operator of its base class. &nbsp;Accordingly, a custom copy assignment operator of a derived class with a resource requires an explicit call to the base class copy assignment operator.<br />
+    <br />
+    We call the base class copy assignment operator from within the body of the definition of the derived class assignment operator. &nbsp;The call takes one of the following forms:<br />
+    <br />
+    the functional form<br />
+    the cast assignment form<br />
+    The functional expression takes the form<br />
+    <br />
+    Base::operator=(identifier);<br />
+    The assignment expression takes the form<br />
+    <br />
+    (Base&)*this = identifier;<br />
+    Base is the name of the base class and identifier is the name of the right operand, which is the source object for the assignment. &nbsp;Note that the address of the derived object is the same as the address of the base class part of that object. &nbsp;The compiler distinguishes the call to the base class operator from a call to the derived class operator by the type of the left operand. <br />
+    Example<br />
+    <br />
+    The derived class definition declares the assignment operator and a private member function for the copying operations:<br />
+    <br />
+    // Student.h<br />
+    <br />
+    #include &lt;iostream&gt;<br />
+    const int NC = 30;<br />
+    <br />
+    class Person {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;char name[NC+1];<br />
+    &nbsp;&nbsp;public:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Person();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Person(const char*);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;void display(std::ostream&) const; <br />
+    };<br />
+    <br />
+    class Student : public Person {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;int no;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float* grade;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;int ng;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;void init(int, int, const float*);<br />
+    &nbsp;&nbsp;public:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(int);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(const char*, int, const float*, int); <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student(const Student&);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student& operator=(const Student& src);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;~Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;void display(std::ostream&) const;<br />
+    };<br />
+    The private init() contains the copying logic shared by the constructors and the assignment operator: <br />
+    <br />
+    // Student.cpp<br />
+    <br />
+    #include &lt;cstring&gt;<br />
+    #include "Student.h"<br />
+    using namespace std;<br />
+    <br />
+    Person::Person() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;name[0] = '\0';<br />
+    }<br />
+    <br />
+    Person::Person(const char* nm) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;strncpy(name, nm, NC);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;name[NC] = '\0';<br />
+    }<br />
+    <br />
+    void Person::display(std::ostream& os) const {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; name &lt;&lt; ' ';<br />
+    }<br />
+    <br />
+    void Student::init(int no_, int ng_, const float* g) { <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;no = no_;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;ng = ng_;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (g != nullptr && ng &gt; 0) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = new float[ng_];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng; i++)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade[i] = g[i];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    }<br />
+    <br />
+    Student::Student() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;no = 0;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;ng = 0;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    }<br />
+    <br />
+    Student::Student(int n) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float g[] = {0.0f};<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;*this = Student("", n, g, 0);<br />
+    }<br />
+    <br />
+    Student::Student(const char* nm, int sn, const float* g, int ng_) : Person(nm) { <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;bool valid = sn &gt; 0 && g != nullptr && ng_ &gt;= 0; <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (valid)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng_ && valid; i++)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid = g[i] &gt;= 0.0f && g[i] &lt;= 100.0f;<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (valid) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init(sn, ng_, g);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*this = Student();<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    }<br />
+    <br />
+    Student::Student(const Student& src) : Person(src) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;init(src.no, src.ng, src.grade);<br />
+    }<br />
+    <br />
+    Student& Student::operator=(const Student& src) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (this != &src) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Base class assignment <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 1 - functional expression<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Person::operator=(src);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 2 - assignment expression<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Person&)*this = src; // call base class assignment operator <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete [] grade;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init(src.no, src.ng, src.grade);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;return *this;<br />
+    }<br />
+    <br />
+    Student::~Student() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;delete [] grade;<br />
+    }<br />
+    <br />
+    void Student::display(ostream& os) const {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (no &gt; 0) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Person::display(os);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; no &lt;&lt; ":\n";<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.setf(ios::fixed);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.precision(2);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng; i++) { <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.width(6);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; grade[i] &lt;&lt; endl;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.unsetf(ios::fixed);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.precision(6);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os &lt;&lt; "no data available" &lt;&lt; endl; <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    }<br />
+    Sharing a private member function is one way of coding the copy constructor and assignment operator for the derived class. <br />
+    <br />
+    The following client uses this implementation to produce the output shown on the right:<br />
+    <br />
+    // Derived Class with a Resource Copy Assignment<br />
+    // dclassResourceCopyAssmnt.cpp<br />
+    <br />
+    #include &lt;iostream&gt;<br />
+    #include "Student.h"<br />
+    <br />
+    int main() {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;float gh[] = {89.4f, 67.8f, 45.5f};<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Student harry("Harry", 1234, gh, 3), harrz;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;harrz = harry; // calls copy assignment <br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;harry.display(std::cout);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;harrz.display(std::cout);<br />
+    }<br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    Harry 1234:<br />
+    &nbsp;89.40<br />
+    &nbsp;67.80<br />
+    &nbsp;45.50<br />
+    Harry 1234:<br />
+    &nbsp;89.40<br />
+    &nbsp;67.80<br />
+    &nbsp;45.50<br />
+    Direct Call Copy Constructor<br />
+    <br />
+    The alternative to sharing a private member function is a direct call from the copy constructor to the copy assignment operator (as in the chapter entitled Classes and Resources). &nbsp;In a direct call, the assignment operator copies the base class part of the object and any call to the base class copy constructor is redundant. <br />
+    <br />
+    Student::Student(const Student& src) { // calls no-argument base constructor <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;*this = src;<br />
+    }<br />
+    <br />
+    Student& Student::operator=(const Student& src) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;if (this != &src) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Base class assignment <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 1 - functional expression<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Person::operator=(src);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 2 - assignment expression<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Person& person = *this; // only copies address<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;person = src; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// call base class operator<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delete [] grade;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no = src.no;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ng = src.ng;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (src.ng &gt; 0) {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = new float[ng];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; ng; i++)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade[i] = src.grade[i];<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grade = nullptr;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;return *this;<br />
+    }<br />
+    <br />
+    SUMMARY<br />
+    <br />
+    a derived class with a resource requires explicit definitions of its special member functions - constructors, copy assignment operator and destructor<br />
+    an explicitly defined derived class copy constructor without a call to the base class' copy constructor calls the base class' no-argument constructor<br />
+    the derived class' copy constructor executes the logic in the base class' copy constructor first<br />
+    an explicitly defined derived class copy assignment operator does NOT automatically call the base class assignment operator. <br />
+    the derived class assignment operator executes the base class assignment operator entirely within the scope of the copy derived class assignment operator<br />
+    the destructor of a derived class automatically calls the destructor of the base class<br />
+    <br />
+    EXERCISES<br />
+    <br />
+    Complete the Handout on Derived Class with a Resource<br />
+</body>
+</head>
