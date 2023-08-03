@@ -1,0 +1,220 @@
+B	1001	C544	The Hobbit	35277	2023/11/14	J. R. R. Tolkien
+B	1002	D208	Harry Potter and the Philosopher's Stone	72685	2023/11/19	J. K. Rowling
+B	1003	N576	The Little Prince	96745	2023/11/19	Antoine de Saint/Exupry
+B	1004	R420	Dream of the Red Chamber	87691	2023/11/24	Cao Xueqin
+B	1005	R393	And Then There Were None	35526	2023/11/12	Agatha Christie
+B	1006	P380	The Lion/ the Witch and the Wardrobe	0	2023/11/18	C. S. Lewis
+B	1007	U264	She: A History of Adventure	0	2023/11/11	H. Rider Haggard
+B	1008	S945	The Adventures of Pinocchio	0	2023/11/18	Carlo Collodi
+B	1009	U818	The Da Vinci Code	0	2023/11/19	Dan Brown
+B	1010	F861	Harry Potter and the Chamber of Secrets	0	2023/11/24	J. K. Rowling
+B	1011	R856	Harry Potter and the Prisoner of Azkaban	0	2023/11/10	J. K. Rowling
+B	1012	C945	Harry Potter and the Goblet of Fire	0	2023/11/14	J. K. Rowling
+B	1013	L290	Harry Potter and the Order of the Phoenix	0	2023/11/11	J. K. Rowling
+B	1014	C332	Harry Potter and the Half/Blood Prince	85952	2023/11/22	J. K. Rowling
+B	1015	C872	Harry Potter and the Deathly Hallows	64984	2023/11/17	J. K. Rowling
+B	1016	Y686	The Alchemist	63288	2023/11/10	Paulo Coelho
+B	1017	E147	The Catcher in the Rye	90607	2023/11/19	J. D. Salinger
+B	1018	N518	The Bridges of Madison County	15467	2023/11/14	Robert James Waller
+B	1019	U215	Ben/Hur: A Tale of the Christ	71498	2023/11/19	Lew Wallace
+B	1020	L200	You Can Heal Your Life	33507	2023/11/18	Louise Hay
+B	1021	W571	One Hundred Years of Solitude	14022	2023/11/24	Gabriel Garca Mrquez
+B	1022	E655	Lolita	96706	2023/11/22	Vladimir Nabokov
+B	1023	J846	Heidi	16990	2023/11/23	Johanna Spyri
+B	1024	E869	The Common Sense Book of Baby and Child Care	80854	2023/11/24	Benjamin Spock
+B	1025	L667	Anne of Green Gables	51189	2023/11/24	Lucy Maud Montgomery
+B	1026	Y627	Black Beauty	43657	2023/11/18	Anna Sewell
+B	1027	D619	The Name of the Rose	22397	2023/11/10	Umberto Eco
+B	1028	N537	The Eagle Has Landed	0	2023/11/16	Jack Higgins
+B	1029	H405	Watership Down	0	2023/11/23	Richard Adams
+B	1030	H859	The Hite Report	0	2023/11/13	Shere Hite
+B	1031	Z192	Charlotte's Web	0	2023/11/17	E. B. White; illustrated byGarth Williams
+B	1032	V718	The Tale of Peter Rabbit	0	2023/11/12	Beatrix Potter
+B	1033	Z248	Jonathan Livingston Seagull	0	2023/11/21	Richard Bach
+B	1034	B236	The Very Hungry Caterpillar	0	2023/11/12	Eric Carle
+B	1035	T223	A Message to Garcia	0	2023/11/24	Elbert Hubbard
+B	1036	U846	To Kill a Mockingbird	45511	2023/11/21	Harper Lee
+B	1037	F676	Flowers in the Attic	85381	2023/11/14	V. C. Andrews
+B	1038	Q353	Cosmos	33904	2023/11/19	Carl Sagan
+B	1039	U737	Sophie's World	60897	2023/11/12	Jostein Gaarder
+B	1040	T273	Angels & Demons	51481	2023/11/22	Dan Brown
+B	1041	M309	Kane and Abel	82568	2023/11/19	Jeffrey Archer
+B	1042	J579	How the Steel Was Tempered	34668	2023/11/17	Nikolai Ostrovsky
+B	1043	I325	War and Peace	0	2023/11/24	Leo Tolstoy
+B	1044	B663	The Diary of Anne Frank	0	2023/11/22	Anne Frank
+B	1045	M760	Your Erroneous Zones	0	2023/11/13	Wayne Dyer
+B	1046	W525	The Thorn Birds	0	2023/11/14	Colleen McCullough
+B	1047	Z305	The Purpose Driven Life	0	2023/11/19	Rick Warren
+B	1048	F282	The Kite Runner	0	2023/11/11	Khaled Hosseini
+B	1049	L141	Valley of the Dolls	0	2023/11/20	Jacqueline Susann
+B	1050	V843	The Great Gatsby	0	2023/11/24	F. Scott Fitzgerald
+B	1051	Z611	Gone with the Wind	95732	2023/11/25	Margaret Mitchell
+B	1052	Q378	Rebecca	66619	2023/11/11	Daphne du Maurier
+B	1053	M413	Nineteen Eighty/Four	34208	2023/11/17	George Orwell
+B	1054	K496	The Revolt of Mamie Stover	53331	2023/11/25	William Bradford Huie
+B	1055	J587	The Girl with the Dragon Tattoo	17660	2023/11/17	Stieg Larsson
+B	1056	O930	The Lost Symbol	51773	2023/11/21	Dan Brown
+B	1057	D427	The Hunger Games	52280	2023/11/23	Suzanne Collins
+B	1058	S924	James and the Giant Peach	0	2023/11/22	Roald Dahl
+B	1059	E662	The Young Guard	0	2023/11/17	Alexander Alexandrovich Fadeyev
+B	1060	E866	Who Moved My Cheese?	0	2023/11/10	Spencer Johnson
+B	1061	Q413	A Brief History of Time	0	2023/11/18	Stephen Hawking
+B	1062	N114	Paul et Virginie	0	2023/11/17	Jacques/Henri Bernardin de Saint/Pierre
+B	1063	O655	Lust for Life	0	2023/11/16	Irving Stone
+B	1064	W675	The Wind in the Willows	0	2023/11/20	Kenneth Grahame
+B	1065	K349	The 7 Habits of Highly Effective People	0	2023/11/18	Stephen R. Covey
+B	1066	Q968	Virgin Soil Upturned	46394	2023/11/18	Mikhail Sholokhov
+B	1067	Y690	The Celestine Prophecy	88238	2023/11/16	James Redfield
+B	1068	L480	The Fault in Our Stars	31647	2023/11/12	John Green
+B	1069	V829	The Girl on the Train	26056	2023/11/14	Paula Hawkins
+B	1070	K360	The Shack	20029	2023/11/18	William P. Young
+B	1071	O701	Uncle Styopa	73994	2023/11/18	Sergey Mikhalkov
+B	1072	Y150	The Godfather	14732	2023/11/11	Mario Puzo
+B	1073	I780	Love Story	46975	2023/11/23	Erich Segal
+B	1074	J808	Catching Fire	0	2023/11/13	Suzanne Collins
+B	1075	X943	Mockingjay	0	2023/11/21	Suzanne Collins
+B	1076	Y443	Kitchen	0	2023/11/24	Banana Yoshimoto
+B	1077	H141	Andromeda Nebula	0	2023/11/17	Ivan Yefremov
+B	1078	E807	Autobiography of a Yogi	0	2023/11/18	Paramahansa Yogananda
+B	1079	D556	Gone Girl	0	2023/11/12	Gillian Flynn
+B	1080	L261	All Quiet on the Western Front	0	2023/11/23	Erich Maria Remarque
+B	1081	Y409	The Bermuda Triangle	0	2023/11/19	Charles Berlitz
+B	1082	W818	Things Fall Apart	20217	2023/11/13	Chinua Achebe
+B	1083	C787	Animal Farm	11826	2023/11/12	George Orwell
+B	1084	S458	Wolf Totem	36783	2023/11/25	Jiang Rong
+B	1085	T202	The Happy Hooker: My Own Story	94024	2023/11/14	Xaviera Hollander
+B	1086	K964	Jaws	97818	2023/11/23	Peter Benchley
+B	1087	D159	Love You Forever	50828	2023/11/19	Robert Munsch
+B	1088	L671	The Women's Room	17950	2023/11/17	Marilyn French
+B	1089	K161	What to Expect When You're Expecting	0	2023/11/20	Arlene EisenbergandHeidi Murkoff
+B	1090	N299	Adventures of Huckleberry Finn	0	2023/11/16	Mark Twain
+B	1091	K215	The Secret Diary of Adrian Mole/ Aged 13 3/4	0	2023/11/22	Sue Townsend
+B	1092	Y397	Pride and Prejudice	0	2023/11/21	Jane Austen
+B	1093	R741	Kon/Tiki: Across the Pacific in a Raft	0	2023/11/23	Thor Heyerdahl
+B	1094	C629	The Good Soldier Svejk	0	2023/11/17	Jaroslav Hasek
+B	1095	N157	Where the Wild Things Are	0	2023/11/22	Maurice Sendak
+B	1096	I973	The Power of Positive Thinking	0	2023/11/16	Norman Vincent Peale
+B	1097	L645	The Secret	27720	2023/11/17	Rhonda Byrne
+B	1098	B320	Fear of Flying	77938	2023/11/24	Erica Jong
+B	1099	K887	Dune	25982	2023/11/11	Frank Herbert
+B	1100	H138	Charlie and the Chocolate Factory	39496	2023/11/18	Roald Dahl
+B	1101	P508	The Naked Ape	42832	2023/11/22	Desmond Morris
+B	1102	W726	Totto/chan/ the Little Girl at the Window	69687	2023/11/19	Tetsuko Kuroyanagi
+B	1103	L207	Matilda	0	2023/11/15	Roald Dahl
+B	1104	O898	The Book Thief	0	2023/11/23	Markus Zusak
+B	1105	S595	The Horse Whisperer	0	2023/11/23	Nicholas Evans
+B	1106	O807	Goodnight Moon	0	2023/11/24	Margaret Wise Brown
+B	1107	U823	The Neverending Story	0	2023/11/22	Michael Ende
+B	1108	S159	Fifty Shades of Grey	0	2023/11/21	E. L. James
+B	1109	M201	The Outsiders	0	2023/11/13	S. E. Hinton
+B	1110	H423	Guess How Much I Love You	0	2023/11/22	Sam McBratney
+B	1111	G743	Sh?gun	85725	2023/11/18	James Clavell
+B	1112	K764	The Poky Little Puppy	71507	2023/11/24	Janette Sebring Lowrey
+B	1113	Z222	The Pillars of the Earth	30945	2023/11/17	Ken Follett
+B	1114	D650	How to Win Friends and Influence People	35147	2023/11/17	Dale Carnegie
+B	1115	Y296	Perfume	83613	2023/11/15	Patrick Sskind
+B	1116	O754	The Grapes of Wrath	98504	2023/11/17	John Steinbeck
+B	1117	L111	The Shadow of the Wind	46030	2023/11/15	Carlos Ruiz Zafn
+B	1118	L954	Interpreter of Maladies	13591	2023/11/14	Jhumpa Lahiri
+B	1119	Y471	Becoming	53305	2023/11/20	Michelle Obama
+B	1120	U633	The Hitchhiker's Guide to the Galaxy	32505	2023/11/17	Douglas Adams
+B	1121	W733	Tuesdays with Morrie	0	2023/11/18	Mitch Albom
+B	1122	J278	God's Little Acre	0	2023/11/14	Erskine Caldwell
+B	1123	M576	Follow Your Heart	0	2023/11/24	Susanna Tamaro
+B	1124	Z409	A Wrinkle in Time	0	2023/11/22	Madeleine L'Engle
+B	1125	F213	Long Walk to Freedom	0	2023/11/16	Nelson Mandela
+B	1126	Q183	The Old Man and the Sea	0	2023/11/23	Ernest Hemingway
+B	1127	V418	Life After Life	0	2023/11/21	Raymond Moody
+B	1128	O117	Me Before You	0	2023/11/15	Jojo Moyes
+B	1129	M852	Norwegian Wood	44911	2023/11/22	Haruki Murakami
+B	1130	U158	Peyton Place	49730	2023/11/19	Grace Metalious
+B	1131	Y966	The Plague	28406	2023/11/24	Albert Camus
+B	1132	T555	No Longer Human	15056	2023/11/13	Osamu Dazai
+B	1133	P459	Man's Search for Meaning	87325	2023/11/20	Viktor Frankl
+B	1134	S478	The Divine Comedy	37489	2023/11/15	Dante Alighieri
+B	1135	O151	The Prophet	66378	2023/11/16	Kahlil Gibran
+B	1136	G990	The Exorcist	91012	2023/11/23	William Peter Blatty
+B	1137	X564	The Gruffalo	76377	2023/11/19	Julia Donaldson
+B	1138	R558	Fifty Shades Darker	22675	2023/11/18	E. L. James
+B	1139	O741	Ronia/ the Robber's Daughter	0	2023/11/21	Astrid Lindgren
+B	1140	I551	The Cat in the Hat	0	2023/11/22	Dr. Seuss
+B	1141	V392	Diana: Her True Story	0	2023/11/23	Andrew Morton
+B	1142	L677	The Help	0	2023/11/12	Kathryn Stockett
+B	1143	U200	Catch/22	0	2023/11/15	Joseph Heller
+B	1144	V547	The Stranger	0	2023/11/16	Albert Camus
+B	1145	T740	Eye of the Needle	0	2023/11/10	Ken Follett
+B	1146	G142	The Lovely Bones	0	2023/11/22	Alice Sebold
+B	1147	I769	Wild Swans	32345	2023/11/23	Jung Chang
+B	1148	F333	Santa Evita	54099	2023/11/23	Toms Eloy Martnez
+B	1149	X737	Night	88228	2023/11/22	Elie Wiesel
+B	1150	Y316	Confucius from the Heart	24780	2023/11/18	Yu Dan
+B	1151	T262	The Total Woman	68109	2023/11/14	Marabel Morgan
+B	1152	W401	Knowledge/value Revolution	69282	2023/11/16	Taichi Sakaiya
+B	1153	V594	Problems in China's Socialist Economy	97800	2023/11/25	Xue Muqiao
+B	1154	E106	What Color Is Your Parachute?	33009	2023/11/20	Richard Nelson Bolles
+B	1155	J633	The Dukan Diet	29260	2023/11/20	Pierre Dukan
+B	1156	C194	The Joy of Sex	0	2023/11/21	Alex Comfort
+B	1157	M791	The Gospel According to Peanuts	0	2023/11/18	Robert L. Short
+B	1158	V105	Life of Pi	0	2023/11/15	Yann Martel
+B	1159	W580	The Giver	0	2023/11/14	Lois Lowry
+B	1160	N950	The Front Runner	0	2023/11/17	Patricia Nell Warren
+B	1161	D951	The Goal	0	2023/11/18	Eliyahu M. Goldratt
+B	1162	P605	Fahrenheit 451	0	2023/11/12	Ray Bradbury
+B	1163	N368	Angela's Ashes	0	2023/11/11	Frank McCourt
+B	1164	T113	The Story of My Experiments with Truth	59505	2023/11/10	Mohandas Karamchand Gandhi
+B	1165	T506	Bridget Jones's Diary	69410	2023/11/17	Helen Fielding
+B	1166	T343	Harry Potter	65205	2023/11/19	J. K. Rowling
+B	1167	F311	Goosebumps	17539	2023/11/10	R. L. Stine
+B	1168	Y690	Perry Mason	28218	2023/11/15	Erle Stanley Gardner
+B	1169	K460	Berenstain Bears	78200	2023/11/12	Stan and Jan Berenstain
+B	1170	M671	Choose Your Own Adventure	27792	2023/11/25	Various authors
+B	1171	P727	Diary of a Wimpy Kid	91885	2023/11/22	Jeff Kinney
+B	1172	X982	Sweet Valley High	74095	2023/11/25	Francine Pascaland ghostwriters
+B	1173	S868	Noddy	19857	2023/11/24	Enid Blyton
+B	1174	D155	Nancy Drew	28526	2023/11/15	Various authors asCarolyn Keene
+B	1175	K424	The Railway Series	75067	2023/11/13	Rev. W. Awdry/Christopher Awdry
+B	1176	Y569	San/Antonio	21794	2023/11/13	Frdric Dard
+B	1177	M813	Robert Langdon	0	2023/11/10	Dan Brown
+B	1178	Q779	The Baby/sitters Club	0	2023/11/21	Ann Martin
+B	1179	Y951	Twilight	0	2023/11/25	Stephenie Meyer
+B	1180	B974	Star Wars	0	2023/11/18	Various authors
+B	1181	C663	Little Critter	0	2023/11/11	Mercer Mayer
+B	1182	B953	Peter Rabbit	0	2023/11/17	Beatrix Potter
+B	1183	I318	Fifty Shades	0	2023/11/12	E. L. James
+B	1184	V353	American Girl	0	2023/11/20	Various authors
+B	1185	O485	Geronimo Stilton	62861	2023/11/24	Elisabetta Damiand ghostwriters
+B	1186	M996	Chicken Soup for the Soul	37949	2023/11/21	Jack Canfield/Mark Victor Hansen
+B	1187	K954	Clifford the Big Red Dog	73358	2023/11/21	Norman Bridwell
+B	1188	I715	Frank Merriwell	78859	2023/11/11	Gilbert Patten
+B	1189	D848	Dirk Pitt	13282	2023/11/23	Clive Cussler
+B	1190	L724	Musashi	74367	2023/11/25	Eiji Yoshikawa
+B	1191	P734	The Chronicles of Narnia	16623	2023/11/20	C. S. Lewis
+B	1192	D855	Mr. Men	39972	2023/11/10	Roger Hargreaves/Adam Hargreaves
+B	1193	H554	The Hunger Games trilogy	30930	2023/11/13	Suzanne Collins
+B	1194	U134	James Bond	12755	2023/11/23	Ian Fleming
+B	1195	V363	Martine	95794	2023/11/19	Gilbert Delahaye/Marcel Marlier
+B	1196	T956	Millennium	32418	2023/11/17	Stieg Larsson/David Lagercrantz
+B	1197	C902	A Song of Ice and Fire	13881	2023/11/17	George R. R. Martin
+B	1198	U820	Discworld	0	2023/11/16	Terry Pratchett
+B	1199	R242	Nijntje	0	2023/11/11	Dick Bruna
+B	1200	W452	Alex Cross	0	2023/11/25	James Patterson
+B	1201	R141	Anpanman	0	2023/11/15	Takashi Yanase
+B	1202	E505	Captain Underpants	0	2023/11/22	Dav Pilkey
+B	1203	D307	Fear Street	0	2023/11/24	R. L. Stine
+B	1204	P601	Pippi Longstocking	0	2023/11/17	Astrid Lindgren
+B	1205	Z256	The Vampire Chronicles	0	2023/11/11	Anne Rice
+B	1206	P888	The Wheel of Time	47315	2023/11/24	Robert Jordan/Brandon Sanderson
+B	1207	O220	OSS 117	74391	2023/11/18	Jean Bruce
+B	1208	O514	Winnie/the/Pooh	86764	2023/11/17	A. A. Milne; illustrated byE. H. Shepard
+B	1209	W758	Magic Tree House series	38222	2023/11/25	Mary Pope Osborne
+B	1210	W722	Left Behind	18232	2023/11/18	Tim LaHaye/Jerry B. Jenkins
+B	1211	U147	A Series of Unfortunate Events	47436	2023/11/22	Lemony SnicketakaDaniel Handler
+B	1212	L222	Little House on the Prairie	98737	2023/11/15	Laura Ingalls Wilder
+B	1213	P604	Jack Reacher	30467	2023/11/18	Lee Child
+B	1214	F365	The Magic School Bus	34077	2023/11/23	Joanna Cole/ illustrated byBruce Degen
+B	1215	P307	Where's Wally?	11089	2023/11/12	Martin Handford
+B	1216	Y853	Men Are from Mars/ Women Are from Venus	98905	2023/11/12	John Gray
+B	1217	C631	The Hardy Boys	42472	2023/11/20	Various authors asFranklin W. Dixon
+B	1218	M406	The Bobbsey Twins	37365	2023/11/16	Various authors asLaura Lee Hope
+B	1219	V259	Tarzan	76029	2023/11/17	Edgar Rice Burroughs
+B	9999	P123	The Story of My Experiments with Truth	12345	2023/12/25	Mohandas Karamchand Gandhi
