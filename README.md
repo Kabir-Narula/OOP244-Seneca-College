@@ -14,12 +14,12 @@ Hey there! Welcome to my C++ Workshop Assignments repository! As a college stude
  Workshop 09: 10/10                                                                                                                                                   
  Worskhop 10: 10/10
 
-Project:
+Final Project:
 
-Milestone 01: 10/10
-Milestone 02: 10/10
-Milestone 03: 10/10
-Milestone 04: 10/10
+Milestone 01: 10/10                                                                                                                                        
+Milestone 02: 10/10                                                                                                                                        
+Milestone 03: 10/10                                                                                                                                        
+Milestone 04: 10/10                                                                                                                                        
 Milestone 05: Pending...
 
 # Need Help?
