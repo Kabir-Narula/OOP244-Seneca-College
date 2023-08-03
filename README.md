@@ -5,6 +5,4 @@ Hey there! Welcome to my C++ Workshop Assignments repository! As a college stude
 If you encounter any issues or have questions related to the assignments or C++ programming in general, feel free to reach out to me. I'm more than willing to help you out! You can contact me through the following means:
 
 Email: kabirnar10@gmail.com
-
 Github: LeviAcker25
-Instagram: 
