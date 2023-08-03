@@ -1,0 +1,25 @@
+//==============================================
+// Name           : Kabir Narula
+// Email          : Knarula9@myseneca.ca
+// Student ID     : 127962223
+// Section        : NAA
+// Date           : 11/07/2023(Tuesday)
+//==============================================
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+
+
+In this workshop, I gained  understanding of inheritance and its implementation in C++ programming.I developed a base class called "MotorVehicle" that included members for the manufacturing year, address currently in use, and number plate number. 
+The class included a "moveTo" function to show and modify the vehicle's location as well as a custom constructor to initialise these attributes.
+
+Then I created a class that derived from "MotorVehicle" called "Truck." With regard to cargo-related characteristics like capacity and the current
+cargo load, this "Truck" class had its own private data members. I used a custom constructor to call the basic class constructor and set the values
+particular to the cargo in order to assure appropriate initialization.
+
+Also there are some important things i leanrt-
+
+ C++ gives us a mechanism to initialise the base part of a derived instance by using the initializer list to send the inputs from a derived class' 
+ constructor to the base class. The base class' constructor can only be called at this point in an inherited class structure, whereit may accept
+an argument to initialise the base class part of the derived instance with the incoming variables in the derived class' constructor.
+Moreover, I learnt what shadowing a function means.I developed unique input and output procedures for both classes. These overloaded operators made it possible to read and write items to and from streams without any interruptions. In order to insert cargo-specific information,
+I overrode the "write" function of the base class in the derived class. This is how shadowing was also implemented.
