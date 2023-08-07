@@ -1,0 +1,9 @@
+B	1001	C544	The Hobbit	35277	2023/07/14	J. R. R. Tolkien
+B	1002	D208	Harry Potter and the Philosopher's Stone	72685	2023/07/28	J. K. Rowling
+P	1018	P002	The Toronto SUN	85176	2023/07/17
+P	1019	P002	The Toronto SUN	0	2023/07/11
+B	1048	N518	The Bridges of Madison County	15467	2023/07/14	Robert James Waller
+B	1061	Z192	Charlotte's Web	0	2023/07/17	E. B. White; illustrated byGarth Williams
+B	1062	V718	The Tale of Peter Rabbit	0	2023/07/12	Beatrix Potter
+P	1093	P008	Canadian Running Magazine	77051	2023/07/25
+P	1094	P008	Canadian Running Magazine	0	2023/07/18
