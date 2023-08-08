@@ -13,13 +13,7 @@ Date      Reason
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.
 -----------------------------------------------------------*/
-//==============================================
-// Name           : Kabir Narula
-// Email          : Knarula9@myseneca.ca
-// Student ID     : 127962223
-// Section        : NAA
-//==============================================
-//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iomanip>
@@ -145,7 +139,7 @@ namespace sdds {
         return is;
 
     }
-    std::ostream& Date::write(std::ostream& os) const // If the Date object is in a ìbadî state (it is invalid) print the ìdateStatus()î. 
+    std::ostream& Date::write(std::ostream& os) const // If the Date object is in a ‚Äúbad‚Äù state (it is invalid) print the ‚ÄúdateStatus()‚Äù. 
         // Otherwise, the function should write the date in the following format using the ostream 
     {
         if (bad())
