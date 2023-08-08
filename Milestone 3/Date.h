@@ -13,13 +13,6 @@ Date      Reason
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.
 -----------------------------------------------------------*/
-//==============================================
-// Name           : Kabir Narula
-// Email          : Knarula9@myseneca.ca
-// Student ID     : 127962223
-// Section        : NAA
-//==============================================
-//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
 
 #ifndef SDDS_DATE_H__
 #define SDDS_DATE_H__
@@ -81,7 +74,7 @@ namespace sdds {
 
         std::istream& read(std::istream& is = std::cin); //This function reads a date from the console in the following format YYYY/MM/DD. 
 
-        std::ostream& write(std::ostream& os = std::cout) const; // If the Date object is in a ìbadî state (it is invalid) print the ìdateStatus()î. 
+        std::ostream& write(std::ostream& os = std::cout) const; // If the Date object is in a ‚Äúbad‚Äù state (it is invalid) print the ‚ÄúdateStatus()‚Äù. 
         // Otherwise, the function should write the date in the following format using the ostream 
 
         bool operator== (const Date& date) const;
