@@ -20,7 +20,7 @@ Milestone 01: 10/10
 Milestone 02: 10/10                                                                                                                                        
 Milestone 03: 10/10                                                                                                                                        
 Milestone 04: 10/10                                                                                                                                        
-Milestone 05: Pending...
+Milestone 05: 10/10
 
 # Personal Notes
 Throughout this course, I have compiled comprehensive notes covering all the essential topics and concepts in C++. These notes serve as a valuable resource for understanding the fundamentals of the language, object-oriented programming, control statements, arrays, functions, file handling, and more. Additionally, I have included examples and practical exercises to reinforce the learning process. Whether you are a beginner or seeking to deepen your C++ knowledge, these notes will prove indispensable. You can access the course notes https://github.com/LeviAcker25/C--Plus-Plus-Notes. Feel free to use and share these resources, and I hope they aid you in your journey to becoming a proficient C++ developer. Happy learning!
