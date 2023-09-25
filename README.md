@@ -2,26 +2,6 @@
 Hello there! I'm thrilled to have you here. As a passionate college student deeply involved in programming, I've established this public repository to share the C++ assignments I've been diligently working on during my course. These assignments encompass a wide spectrum of C++ concepts and are thoughtfully designed to aid fellow students like yourself in enhancing your coding prowess.
 
 
-# 💬 Discussions
-
-Welcome to the Discussions section of our C++ Workshop Assignments repository! We're excited to hear from you, answer your questions, and engage in meaningful conversations about C++ programming and the assignments. This space is for the community, and we encourage your active participation.
-
-### How to Access Discussions
-
-1. **Click on the "Discussions" Tab**: To access our discussions, simply click on the "Discussions" tab at the top of this repository. You'll find it next to "Code" and "Issues."
-
-2. **Browse or Start a Discussion**: You can browse existing discussions to see if your question has already been answered, or you can start a new discussion by clicking the "New Discussion" button.
-
-Feel free to use Discussions for:
-
-- **Asking Questions**: Have a question about C++ programming or any specific assignment? Ask away! Our community is here to help.
-
-- **Sharing Ideas**: Got an innovative idea or a different approach to solving a problem? Share it with us! Collaboration can lead to new insights.
-
-- **Engaging with Others**: Connect with fellow members, share your experiences, and learn from one another. Collaboration is key to our community's growth.
-
-- **Feedback and Suggestions**: Have suggestions for improving this repository or community? We value your input and are open to enhancements.
-
 ## Marks Secured
 
 Here's a glimpse of the remarkable marks I secured in each workshop and milestone:
@@ -44,6 +24,26 @@ Here's a glimpse of the remarkable marks I secured in each workshop and mileston
 - Milestone 03: 10/10
 - Milestone 04: 10/10
 - Milestone 05: 10/10
+
+# 💬 Discussions
+
+Welcome to the Discussions section of our C++ Workshop Assignments repository! We're excited to hear from you, answer your questions, and engage in meaningful conversations about C++ programming and the assignments. This space is for the community, and we encourage your active participation.
+
+### How to Access Discussions
+
+1. **Click on the "Discussions" Tab**: To access our discussions, simply click on the "Discussions" tab at the top of this repository. You'll find it next to "Code" and "Issues."
+
+2. **Browse or Start a Discussion**: You can browse existing discussions to see if your question has already been answered, or you can start a new discussion by clicking the "New Discussion" button.
+
+Feel free to use Discussions for:
+
+- **Asking Questions**: Have a question about C++ programming or any specific assignment? Ask away! Our community is here to help.
+
+- **Sharing Ideas**: Got an innovative idea or a different approach to solving a problem? Share it with us! Collaboration can lead to new insights.
+
+- **Engaging with Others**: Connect with fellow members, share your experiences, and learn from one another. Collaboration is key to our community's growth.
+
+- **Feedback and Suggestions**: Have suggestions for improving this repository or community? We value your input and are open to enhancements.
 
 ## Personal Notes
 
