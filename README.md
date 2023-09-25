@@ -1,4 +1,4 @@
-# 🖥️ C++ Workshop Assignments Repository
+#  C++ Workshop Assignments Repository
 Hello there! I'm thrilled to have you here. As a passionate college student deeply involved in programming, I've established this public repository to share the C++ assignments I've been diligently working on during my course. These assignments encompass a wide spectrum of C++ concepts and are thoughtfully designed to aid fellow students like yourself in enhancing your coding prowess.
 
 
