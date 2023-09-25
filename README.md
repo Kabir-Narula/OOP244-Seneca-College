@@ -35,15 +35,6 @@ Welcome to the Discussions section of our C++ Workshop Assignments repository! W
 
 2. **Browse or Start a Discussion**: You can browse existing discussions to see if your question has already been answered, or you can start a new discussion by clicking the "New Discussion" button.
 
-Feel free to use Discussions for:
-
-- **Asking Questions**: Have a question about C++ programming or any specific assignment? Ask away! Our community is here to help.
-
-- **Sharing Ideas**: Got an innovative idea or a different approach to solving a problem? Share it with us! Collaboration can lead to new insights.
-
-- **Engaging with Others**: Connect with fellow members, share your experiences, and learn from one another. Collaboration is key to our community's growth.
-
-- **Feedback and Suggestions**: Have suggestions for improving this repository or community? We value your input and are open to enhancements.
 
 ## Personal Notes
 
