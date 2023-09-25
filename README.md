@@ -11,7 +11,7 @@ Utilizing this repository as a reference is laudable, but direct replication san
 By accessing and utilizing the content within this repository, you affirm that you comprehend the significance of academic integrity ([Academic Integrity Policy](https://www.senecacollege.ca/about/policies/academic-integrity-policy.html)) and that you'll use this material prudently to enrich your learning voyage.
 
 
-# C++ Workshop Assignments Repository
+
 
 ## Welcome to my C++ Workshop Assignments Repository!
 
