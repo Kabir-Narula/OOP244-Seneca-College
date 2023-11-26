@@ -1,2 +1,1 @@
-<!-- Make sure to use the correct path to your image -->
-<img src="https://github.com/Kim-Chaewonn/OOP244-Seneca-College/assets/137004973/5372f4ce-11dc-45aa-a6ac-c90fbb265622" alt="LE SSERAFIM UNFORGIVEN logo" style="width:100%;">
+![download (12)](https://github.com/Kim-Chaewonn/OOP244-Seneca-College/assets/137004973/702952c5-6e95-40b7-9358-bf6a64b7e962)
