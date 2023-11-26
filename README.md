@@ -1,1 +1,1 @@
-![Alt Text](https://github.com/Kim-Chaewonn/Kim-Chaewonn/assets/137004973/8d516316-e24a-4ee9-8f0a-8ab17c1b9448){width=500}
+![download (16)](https://github.com/Kim-Chaewonn/OOP244-Seneca-College/assets/137004973/d88abc18-a07d-427c-9e32-71fa5f636679)
