@@ -51,10 +51,3 @@ Utilizing this repository as a reference is laudable, but direct replication san
 By accessing and utilizing the content within this repository, you affirm that you comprehend the significance of academic integrity ([Academic Integrity Policy](https://www.senecacollege.ca/about/policies/academic-integrity-policy.html)) and that you'll use this material prudently to enrich your learning voyage.
 
 
-## Need Help? 🆘
-
-Should you encounter any challenges or have queries concerning the assignments or C++ programming in general, don't hesitate to reach out to me. I'm eager to lend a helping hand! Feel free to contact me through the following channels:
-
-- 📧 Email: ackerlevi102@gmail.com
-
-Happy coding and learning!
